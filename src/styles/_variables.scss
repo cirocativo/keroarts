@@ -1,0 +1,71 @@
+// ── Variables ────────────────────────────────────────────────────────────────
+$lilac-light:   #e8d5f5;
+$lilac-mid:     #c9a8e8;
+$lilac-dark:    #7b4fa6;
+
+$rose-light:    #f7dde8;
+$rose-mid:      #e8a8c4;
+$rose-dark:     #b8467a;
+
+$beige-light:   #f5ede0;
+$beige-mid:     #e8d5b8;
+$beige-dark:    #8b6a3e;
+
+$cream:         #fdf8f2;
+$white:         #ffffff;
+$text-dark:     #3d2a1e;
+$text-mid:      #6b4c38;
+$text-soft:     #9c7a60;
+
+// ── Global Reset & Base ───────────────────────────────────────────────────────
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --lilac-light:   #{$lilac-light};
+  --lilac-mid:     #{$lilac-mid};
+  --lilac-dark:    #{$lilac-dark};
+  --rose-light:    #{$rose-light};
+  --rose-mid:      #{$rose-mid};
+  --rose-dark:     #{$rose-dark};
+  --beige-light:   #{$beige-light};
+  --beige-mid:     #{$beige-mid};
+  --beige-dark:    #{$beige-dark};
+  --cream:         #{$cream};
+  --text-dark:     #{$text-dark};
+  --text-mid:      #{$text-mid};
+  --text-soft:     #{$text-soft};
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Nunito', sans-serif;
+  background-color: $cream;
+  color: $text-dark;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Playfair Display', serif;
+}
+
+button {
+  cursor: pointer;
+  font-family: 'Nunito', sans-serif;
+}
+
+input {
+  font-family: 'Nunito', sans-serif;
+}
+
+// ── Scrollbar ─────────────────────────────────────────────────────────────────
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: $beige-light; }
+::-webkit-scrollbar-thumb { background: $lilac-mid; border-radius: 10px; }

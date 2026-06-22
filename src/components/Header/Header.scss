@@ -1,0 +1,77 @@
+@use "../../styles/variables" as *;
+
+.header {
+  background: linear-gradient(
+    135deg,
+    rgba($lilac-light, 0.9) 0%,
+    rgba($rose-light, 0.9) 50%,
+    rgba($beige-light, 0.9) 100%
+  );
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba($beige-mid, 0.5);
+  padding: 0.75rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 20px rgba($beige-dark, 0.1);
+
+  &__inner {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+
+    @media (max-width: 630px) {
+      justify-content: center;
+    }
+  }
+
+  &__logo {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+
+    &-image {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+    }
+  }
+
+  &__brand {
+    h1 {
+      font-family: "Playfair Display", serif;
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: $beige-dark;
+      line-height: 1.1;
+      letter-spacing: 0.5px;
+    }
+
+    p {
+      font-size: 0.72rem;
+      color: $text-soft;
+      font-weight: 500;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      margin-top: 1px;
+    }
+  }
+
+  &__tagline {
+    font-size: 0.82rem;
+    color: $rose-dark;
+    font-weight: 600;
+    background: rgba($white, 0.6);
+    padding: 0.35rem 0.85rem;
+    border-radius: 50px;
+    border: 1px solid rgba($rose-mid, 0.5);
+    letter-spacing: 0.2px;
+
+    @media (max-width: 630px) {
+      display: none;
+    }
+  }
+}

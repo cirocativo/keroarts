@@ -1,0 +1,52 @@
+@use "../../styles/variables" as *;
+
+.sheet-count-selector {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  &__presets {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.65rem;
+  }
+
+  &__custom {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+
+    label {
+      font-size: 0.85rem;
+      color: $text-soft;
+      font-weight: 600;
+    }
+
+    input {
+      width: 90px;
+      padding: 0.45rem 0.75rem;
+      border-radius: 10px;
+      border: 2px solid $beige-mid;
+      background: rgba($white, 0.8);
+      color: $text-dark;
+      font-size: 0.9rem;
+      font-weight: 600;
+      outline: none;
+      transition: border-color 0.2s;
+
+      &:focus {
+        border-color: $lilac-mid;
+      }
+
+      &::placeholder {
+        color: $beige-mid;
+      }
+    }
+
+    span {
+      font-size: 0.85rem;
+      color: $text-soft;
+    }
+  }
+}

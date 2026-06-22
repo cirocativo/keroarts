@@ -1,0 +1,65 @@
+@use '../../styles/variables' as *;
+
+.ring-selector {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.ring-swatch {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.65rem 0.75rem;
+  border-radius: 12px;
+  border: 2px solid $beige-mid;
+  background: rgba($white, 0.6);
+  transition: all 0.22s cubic-bezier(0.34, 1.56, 0.64, 1);
+  min-width: 68px;
+
+  &:hover {
+    border-color: $lilac-mid;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba($lilac-dark, 0.12);
+  }
+
+  &.selected {
+    border-color: $lilac-dark;
+    background: rgba($lilac-light, 0.35);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba($lilac-dark, 0.18);
+  }
+
+  &__dot {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: block;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+  }
+
+  &__label {
+    font-size: 0.68rem;
+    font-weight: 700;
+    color: $text-mid;
+    white-space: nowrap;
+  }
+
+  &__check {
+    position: absolute;
+    top: 3px;
+    right: 3px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, $lilac-dark, $rose-dark);
+    color: $white;
+    font-size: 0.55rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+  }
+}

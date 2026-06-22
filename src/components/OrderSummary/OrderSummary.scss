@@ -1,0 +1,54 @@
+@use '../../styles/variables' as *;
+
+.order-summary {
+  background: linear-gradient(135deg, rgba($lilac-light, 0.45), rgba($rose-light, 0.45));
+  border: 1.5px solid rgba($lilac-mid, 0.5);
+  border-radius: 18px;
+  padding: 1.5rem;
+
+  &__title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    color: $lilac-dark;
+    margin-bottom: 1rem;
+  }
+
+  &__list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.5rem 0.75rem;
+    border-radius: 10px;
+    background: rgba($white, 0.55);
+    font-size: 0.88rem;
+  }
+
+  &__icon {
+    font-size: 1rem;
+    flex-shrink: 0;
+    width: 22px;
+    text-align: center;
+  }
+
+  &__label {
+    color: $text-soft;
+    font-weight: 600;
+    min-width: 72px;
+    flex-shrink: 0;
+  }
+
+  &__value {
+    color: $text-dark;
+    font-weight: 700;
+    text-transform: capitalize;
+    flex: 1;
+    word-break: break-word;
+  }
+}
