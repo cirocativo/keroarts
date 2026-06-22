@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./WhatsAppButton.scss";
 import { PRODUCT_LABELS } from "../../utils/constants";
+import { calculateTotal } from "../../utils/priceHelper";
 
 const WHATSAPP_NUMBER = "5592982444254";
 

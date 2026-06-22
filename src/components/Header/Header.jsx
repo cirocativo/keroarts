@@ -19,7 +19,7 @@ export default function Header() {
           </div>
         </div>
         <Link to="/capas" className="selected pill-btn header__view-covers-btn">
-          Ver capas
+          Capas
         </Link>
       </div>
     </header>
