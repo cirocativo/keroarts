@@ -1,6 +1,7 @@
 import React from "react";
 import "./SizeSelector.scss";
 import { SIZES } from "../../data/sizes";
+import { getPriceLabel } from "../../utils/priceHelper";
 
 export default function SizeSelector({
   selectedProduct,
@@ -11,6 +12,7 @@ export default function SizeSelector({
     <div className="size-selector">
       {selectedProduct?.sizeList?.map((e) => {
         const s = SIZES.find((sz) => sz.id === e);
+        const price = getPriceLabel(selectedProduct, s.id);
         return (
           <button
             key={s.id}
@@ -23,7 +25,11 @@ export default function SizeSelector({
             <div className="size-card__info">
               <strong>{s.label}</strong>
               <span>{s.dimensions}</span>
-              <small>{s.description}</small>
+              {price && (
+                <p className="info-price">
+                  {getPriceLabel(selectedProduct, s.id)}
+                </p>
+              )}
             </div>
             {selectedSize === s.id && (
               <span className="size-card__check">✓</span>

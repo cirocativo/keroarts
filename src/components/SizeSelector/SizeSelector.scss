@@ -90,6 +90,7 @@
 
   &__info {
     display: flex;
+    align-self: flex-start;
     flex-direction: column;
     gap: 0.1rem;
     text-align: left;
@@ -105,9 +106,10 @@
       color: $text-mid;
     }
 
-    small {
-      font-size: 0.7rem;
-      color: $text-soft;
+    &__price {
+      font-size: 0.75rem;
+      color: $rose-dark;
+      font-weight: 700;
     }
   }
 

@@ -74,3 +74,57 @@ export const calculateTotal = (order) => {
 
   return basePrice;
 };
+
+const getMinSheetCountForSize = (product, size) => {
+  if (!product?.sheetCount) return null;
+
+  if (Array.isArray(product.sheetCount)) {
+    return Math.min(...product.sheetCount);
+  }
+
+  const counts = product.sheetCount[size];
+  return counts ? Math.min(...counts) : null;
+};
+
+export const normalizePrice = (price) => {
+  if (typeof price === "number") return price;
+  if (price && typeof price === "object") {
+    const values = Object.values(price).filter((v) => typeof v === "number");
+    return values.length ? Math.min(...values) : 0;
+  }
+  return 0;
+};
+
+const normalizePriceZeroAsNull = (price) => {
+  const normalized = normalizePrice(price);
+  return normalized === 0 ? null : normalized;
+};
+
+export const getPriceLabel = (product, size) => {
+  const sheetCount = getMinSheetCountForSize(product, size);
+  if (!sheetCount) return "";
+  const price = normalizePriceZeroAsNull(
+    getPrice({ productId: product.id, size, sheetCount }),
+  );
+  return price != null ? `R$ ${price}` : "";
+};
+
+export const getPlannerPriceLabel = (plannerId) => {
+  const planner = PLANNERS.find((p) => p.id === plannerId);
+  console.log(
+    "Calculando preço para plannerId:",
+    plannerId,
+    "Encontrado planner:",
+    planner,
+  );
+  if (!planner) return "";
+  const price = normalizePriceZeroAsNull(
+    getPrice({
+      productId: "planner",
+      plannerId,
+      size: "A5",
+      sheetCount: getMinSheetCountForSize(planner, "A5"),
+    }),
+  );
+  return price != null ? `R$ ${price}` : "";
+};

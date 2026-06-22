@@ -49,4 +49,10 @@
       color: $text-soft;
     }
   }
+
+  button {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
 }

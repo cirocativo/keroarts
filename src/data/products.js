@@ -11,7 +11,10 @@ export const PRODUCTS = [
     icon: "📓",
     desc: "Caderno pautado ou pontilhado",
     sizeList: ["A5", "A6"],
-    sheetCount: [50, 100],
+    sheetCount: {
+      A5: [50, 100],
+      A6: [60],
+    },
   },
   {
     id: "notepad",
@@ -161,3 +164,10 @@ export const PLANNERS = [
     ],
   },
 ];
+
+export const SHEET_COUNTS = {
+  notebook: {
+    A5: [50, 100],
+    A6: [60],
+  },
+};

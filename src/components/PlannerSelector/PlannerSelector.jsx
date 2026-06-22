@@ -1,6 +1,7 @@
 import React from "react";
 import "./PlannerSelector.scss";
 import { PLANNERS } from "../../data/products";
+import { getPlannerPriceLabel } from "../../utils/priceHelper";
 
 export default function PlannerSelector({ selected, onChange }) {
   const currentPlanner = selected;
@@ -16,7 +17,7 @@ export default function PlannerSelector({ selected, onChange }) {
             type="button"
           >
             <span className="planner-card__label">{p.label}</span>
-
+            <p className="info-price">{getPlannerPriceLabel(p.id)}</p>
             {selected?.id === p.id && (
               <span className="planner-card__check">✓</span>
             )}

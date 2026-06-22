@@ -45,6 +45,7 @@ export default function App() {
 
   const isFichario = order.product?.id === "ring_binder";
   const isPlanner = order.product?.id === "planner";
+  const isNotebook = order.product?.id === "notebook";
 
   // Steps become visible progressively
   const showSize = !!order.product;
@@ -100,7 +101,10 @@ export default function App() {
             <SizeSelector
               selectedProduct={order.product}
               selectedSize={order.size}
-              onChange={(v) => update("size", v)}
+              onChange={(v) => {
+                update("size", v);
+                update("sheetCount", null);
+              }}
             />
           </div>
         )}
@@ -134,10 +138,15 @@ export default function App() {
               sheetCountOptions={
                 isPlanner
                   ? order.plannerType.sheetCount
-                  : order.product.sheetCount
+                  : isNotebook
+                    ? order.product.sheetCount[order.size]
+                    : order.product.sheetCount
               }
               value={order.sheetCount}
               onChange={(v) => update("sheetCount", v)}
+              product={order.product}
+              size={order.size}
+              plannerType={order.plannerType}
             />
           </div>
         )}
