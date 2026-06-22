@@ -38,21 +38,17 @@ export const calculateTotal = (order) => {
   const productId = order.product.id;
   let basePrice = 0;
 
-  // 1. LÓGICA PARA PLANNER (Possui uma camada extra: plannerType)
   if (
     productId === "planner" &&
     order.plannerType &&
     order.size &&
     order.sheetCount
   ) {
-    const plannerId = order.plannerType.id; // assumindo que tenha .id no objeto do selector
+    const plannerId = order.plannerType.id;
     basePrice =
       PRODUCT_PRICES.planner?.[plannerId]?.[order.size]?.[order.sheetCount] ||
       0;
-  }
-
-  // 2. LÓGICA PARA OS DEMAIS PRODUTOS (Notebook, Ring Binder, Notepad, etc.)
-  else if (order.size && order.sheetCount) {
+  } else if (order.size && order.sheetCount) {
     const productData =
       PRODUCT_PRICES[productId]?.[order.size]?.[order.sheetCount];
 
@@ -67,7 +63,6 @@ export const calculateTotal = (order) => {
     }
   }
 
-  // 3. ADICIONA OS EXTRAS (Igual você queria, somando no final)
   if (order.foilActivated) {
     basePrice += PRODUCT_PRICES.extra.foil;
   }

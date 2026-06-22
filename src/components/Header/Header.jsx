@@ -1,6 +1,7 @@
 import React from "react";
 import "./Header.scss";
 import logoImg from "/src/assets/logo.jpeg";
+import { Link } from "react-router-dom";
 
 export default function Header() {
   return (
@@ -17,9 +18,9 @@ export default function Header() {
             <p>Papelaria personalizada</p>
           </div>
         </div>
-        <div className="header__tagline">
-          ✨ Onde a criatividade encontra propósito
-        </div>
+        <Link to="/capas" className="selected pill-btn header__view-covers-btn">
+          Ver capas
+        </Link>
       </div>
     </header>
   );

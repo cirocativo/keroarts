@@ -74,4 +74,11 @@
       display: none;
     }
   }
+
+  &__view-covers-btn {
+    letter-spacing: 0.2px;
+    transition: all 0.2s ease-in-out;
+    font-style: italic;
+    text-decoration: none;
+  }
 }

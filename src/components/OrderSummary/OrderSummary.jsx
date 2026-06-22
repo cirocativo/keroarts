@@ -1,15 +1,7 @@
 import React from "react";
 import "./OrderSummary.scss";
 import { calculateTotal } from "../../utils/priceHelper";
-
-const PRODUCT_LABELS = {
-  notebook: "Caderno",
-  notepad: "Bloco de Notas",
-  checklist: "Checklist",
-  prayer_notebook: "Caderno de Oração",
-  planner: "Planner",
-  ring_binder: "Fichário",
-};
+import { PRODUCT_LABELS } from "../../utils/constants";
 
 export default function OrderSummary({ order }) {
   const {
