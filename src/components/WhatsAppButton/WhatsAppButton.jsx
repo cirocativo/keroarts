@@ -25,7 +25,7 @@ function buildMessage(order) {
     : (PRODUCT_LABELS[product?.id] ?? product?.id);
   const value = calculateTotal(order);
 
-  let msg = `Olá! Gostaria de fazer um pedido pela KeroArts 🌸\n\n`;
+  let msg = `Olá! Gostaria de fazer um pedido pela Kero Arts Papelaria \n\n`;
   msg += `📓 *Produto:* ${productLabel}\n`;
   msg += `📐 *Tamanho:* ${size}\n`;
   msg += `📄 *Folhas:* ${sheetCount}\n`;

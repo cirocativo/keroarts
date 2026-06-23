@@ -1,9 +1,9 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import "../styles/_variables.scss";
 import "../styles/app.scss";
 
 import Header from "../components/Header/Header";
-import { Link } from "react-router-dom";
+
 import ProductSelector from "../components/ProductSelector/ProductSelector";
 import SizeSelector from "../components/SizeSelector/SizeSelector";
 import SheetCountSelector from "../components/SheetCountSelector/SheetCountSelector";
@@ -13,6 +13,7 @@ import RingColorSelector from "../components/RingColorSelector/RingColorSelector
 import OrderSummary from "../components/OrderSummary/OrderSummary";
 import WhatsAppButton from "../components/WhatsAppButton/WhatsAppButton";
 import PlannerSelector from "../components/PlannerSelector/PlannerSelector";
+import { Footer } from "../components/Footer/Footer";
 
 export const Home = () => {
   const [order, setOrder] = useState({
@@ -64,7 +65,6 @@ export const Home = () => {
   return (
     <div className="app">
       <Header />
-
       <main className="main-content">
         {/* Intro */}
         <div className="intro-block">
@@ -226,9 +226,7 @@ export const Home = () => {
         )}
       </main>
 
-      <footer className="app-footer">
-        <p>💜 KeroArts – Onde a criatividade encontra propósito ✨ </p>
-      </footer>
+      <Footer />
     </div>
   );
 };

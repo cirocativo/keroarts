@@ -10,11 +10,11 @@ export default function Header() {
         <div className="header__logo">
           <img
             src={logoImg}
-            alt="KeroArts Logo"
+            alt="Kero Arts Logo"
             className="header__logo-image"
           />
           <div className="header__brand">
-            <h1>KeroArts</h1>
+            <h1>Kero Arts</h1>
             <p>Papelaria personalizada</p>
           </div>
         </div>
